@@ -1,0 +1,30 @@
+{
+  "scripts": {
+    "server": "node app.js",
+    "start": "nodemon app.js"
+  },
+  "name": "express-js-mern",
+  "author": "Muhammad Fajri Assidiq",
+  "description": "Latihan membuat express js",
+  "version": "0.0.1",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/muhafash/express-node-eduwork.git"
+  },
+  "keywords": [
+    "express",
+    "node",
+    "mern",
+    "muhafash"
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/muhafash/express-node-eduwork/issues"
+  },
+  "homepage": "https://github.com/muhafash/express-node-eduwork#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "multer": "^1.4.5-lts.1"
+  }
+}
