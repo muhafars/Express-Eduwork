@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "server": "node app.js",
+    "server": "nodemon app.js",
     "start": "nodemon app.js"
   },
   "name": "express-js-mern",
