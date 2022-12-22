@@ -31,4 +31,27 @@ const storeView = (req, res) => {
   }
 };
 
-module.exports = { index, filterView, storeView };
+const updateView = (req, res) => {
+  const { name, price, stock, status } = req.body;
+  const image = req.file;
+  const { id } = req.params;
+  console.log(req.params);
+  if (image) {
+    const target = path.join(__dirname, "../../public/uploads", image.originalname);
+    fs.renameSync(image.path, target);
+    db.collection("products")
+      .updateOne({ _id: ObjectID(id) }, { $set: { name, price, stock, status, image_url: `http:localhost:4000/public/${image.originalname}` } })
+      .then((result) => res.send(result))
+      .catch((error) => res.send(error));
+  }
+};
+
+const destroyView = (req, res) => {
+  const { id } = req.params;
+  db.collection("products")
+    .deleteOne({ _id: ObjectID(id) })
+    .then((result) => res.send(result))
+    .catch((error) => res.send(error));
+};
+
+module.exports = { index, filterView, storeView, updateView, destroyView };
